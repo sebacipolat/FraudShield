@@ -14,6 +14,10 @@ Design Example of a Fictional Library for Fraud Prevention.
 > [!NOTE]  
 > This is not a real SDK just a Documentation to demostration purpose
 
+## Requirements
+* Minimun Android Version API 21
+  
+  
 ## Architecture
 <img src="/FraudShield.drawio.png"/>
 
@@ -104,6 +108,7 @@ FraudShield.getInstance().getDevice().recordTransaction("TRANSACTION_ID","body")
 #  Risk Operation Score Calculation 
 
 FraudShield let check if a operation will be riskly based on data captured and device checks
+
 Return INT value (0-10)
 
 | Score | RISK | 
@@ -116,6 +121,8 @@ Return INT value (0-10)
 ```kotlin
 FraudShield.getInstance().checkScore()
 ```
+
+You should handle the score value and adapt your flow UX to handle the diferent risk values.
 
 # Sync Data
 
