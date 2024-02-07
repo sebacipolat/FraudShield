@@ -43,7 +43,7 @@ dependencies {
 }
 ```
 
-* Initialize
+# Initialize
   
 ```kotlin
 FraudShield.getInstance().init("COMPANY_ID", "API_KEY",
@@ -55,12 +55,12 @@ FraudShield.getInstance().init("COMPANY_ID", "API_KEY",
     }
 )
 ```
-* Identify User
+# Identify User
 
 ```kotlin
 FraudShield.getInstance().setUserID("USER_id")
 ```
-* Events
+# Events
 
 Set custom events
 
@@ -69,9 +69,26 @@ FraudShield.getInstance().setUserID("USER_id")
 ```
 
 ```kotlin
-FraudShield.sendEvent("event_name", mapOf("key1" to "value1", "key2" to 123, "key3" to true))
+FraudShield.getInstance().sendEvent("event_name", mapOf("key1" to "value1", "key2" to 123, "key3" to true))
 ```
 
+# Device Protecion 
+
+Based on WolfGuard SDK
+
+https://github.com/sebacipolat/WolfGuard
+
+```kotlin
+FraudShield.getInstance().device()
+```
+retrieve WolfGuard device class
+
+ie: check root
+
+```kotlin
+FraudShield.getInstance().getDevice().root.isRooted(context)
+```
+#  Protecion 
 
 
 # License
