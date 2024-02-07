@@ -57,9 +57,14 @@ FraudShield.getInstance().init("COMPANY_ID", "API_KEY",
 ```
 # Identify User
 
+Set User ID.
+
+ie: email, userid
+
 ```kotlin
 FraudShield.getInstance().setUserID("USER_id")
 ```
+
 # Events
 
 Set custom events
@@ -76,7 +81,7 @@ FraudShield.getInstance().sendEvent("event_name", mapOf("key1" to "value1", "key
 
 Based on WolfGuard SDK
 
-https://github.com/sebacipolat/WolfGuard
+Check the documentation https://github.com/sebacipolat/WolfGuard
 
 ```kotlin
 FraudShield.getInstance().device()
@@ -88,7 +93,46 @@ ie: check root
 ```kotlin
 FraudShield.getInstance().getDevice().root.isRooted(context)
 ```
-#  Protecion 
+
+# Transaction
+Record a transaction 
+
+```kotlin
+FraudShield.getInstance().getDevice().recordTransaction("TRANSACTION_ID","body")
+```
+
+#  Risk Operation Score Calculation 
+
+FraudShield let check if a operation will be riskly based on data captured and device checks
+Return INT value (0-10)
+
+| Score | RISK | 
+|-----------|------|
+| 0-4  | SAFE | 
+| 5-7  | MEDIUM| 
+| 8-10 |  RISK    | 
+
+
+```kotlin
+FraudShield.getInstance().checkScore()
+```
+
+# Sync Data
+
+Force send data to FraudShield backend
+
+```kotlin
+FraudShield.getInstance().flush()
+```
+
+# End Session
+
+Finish Session, clean user id and make a flush.
+
+```kotlin
+FraudShield.getInstance().endSession()
+```
+
 
 
 # License
