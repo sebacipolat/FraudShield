@@ -24,6 +24,7 @@ Design Example of a Fictional Library for Fraud Prevention.
 The SDK has a singleton as an entrypoint.
 
 We use multiple ThirdParty Librarys mixed with our own logic usecases.
+
 The users events is stored locally into a Room Database.
 
 # Getting started
