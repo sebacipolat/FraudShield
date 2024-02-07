@@ -12,7 +12,7 @@ Design Example of a Fictional Library for Fraud Prevention.
 * Onboarding Protection
 
 > [!NOTE]  
-> This sdk is still in development
+> This is not a real SDK just a Documentation to demostration purpose
 
 ## Architecture
 <img src="/FraudShield.drawio.png"/>
@@ -22,9 +22,42 @@ The SDK has a singleton as an entrypoint.
 We use multiple ThirdParty Librarys mixed with our own logic usecases.
 The users events is stored locally into a Room Database.
 
+# Getting started
 
+* Add Dependency
 
+First ensure that you have defined `mavenCentral` in your Gradle configuration.
+
+```groovy
+repositories {
+    mavenCentral()
+}
+```
+
+Next, add wolfguard as a dependency to your project.
+
+Groovy
+```groovy
+dependencies {
+    implementation 'io.github.sebacipolat:fraud-shield-sdk:{version}'
+}
+```
+
+* Initialize
   
+```kotlin
+FraudShield.getInstance().init("COMPANY_ID", "API_KEY",
+    onStarted = {
+        // Callback para cuando FraudShield se ha iniciado con éxito
+    },
+    onFailure = { error ->
+        // Callback para manejar fallos durante la inicialización de FraudShield
+    }
+)
+```
+
+
+```
 # License
 ```xml
 Designed and developed by 2024 Sebastian Cipolat
