@@ -17,85 +17,14 @@ Design Example of a Fictional Library for Fraud Prevention.
 ## Architecture
 <img src="/FraudShield.drawio.png"/>
 
-First ensure that you have defined `mavenCentral` in your Gradle configuration.
+The SDK has a singleton as an entrypoint.
 
-```groovy
-repositories {
-    mavenCentral()
-}
-```
-
-Next, add wolfguard as a dependency to your project.
-
-Groovy
-```groovy
-dependencies {
-    implementation 'io.github.sebacipolat:wolfguard-sdk:{version}'
-}
-```
-Kts
-
-```kts
-dependencies {
-    implementation("io.github.sebacipolat:wolfguard-sdk:{version}")
-}
-```
+We use multiple ThirdParty Librarys mixed with our own logic usecases.
+The users events is stored locally into a Room Database.
 
 
-## Emulation detection
 
-Do you want to know if your app is running into a emulator?
-
-Get a boolean value with
-
-```kotlin
-WolfGuard.getInstance().getDevice().emulator.isEmulator()
-```
-
-## Root detection
-
-Do you want to know if your app is running into a root device?
-
-We use rootber https://github.com/scottyab/rootbeer to make these detection
-
-You will need provide an Android context to get a boolean value with
-
-```kotlin
-WolfGuard.getInstance().getDevice().root.isRooted(context)
-```
-
-## Usb Debug mode detection
-
-Do you want to know if your app is running into a device with the usdb debug mode enabled?
-
-You will need provide an Android context to get a boolean value with
-
-```kotlin
-WolfGuard.getInstance().getDevice().usbDebug.isEnabled(context)
-```
-## Voip Call detection
-
-Do you want to know if your app is running into a device with an active voip call, like whatsapp, skype?
-
-You will need provide an Android context to get a boolean value with
-
-```kotlin
-WolfGuard.getInstance().getDevice().voip.isOnCall(context)
-```
-
-## Sample App
-There are an sample app to test easily our sdk, just clone the wolfguard repo and open the app project.
-
-<img src="/images/screen_1.png"/>
-
-## Demo
-
-| Feature   | Demo | 
-|-----------|------|
-| Voip Call | <img src="/images/voip.gif" align="right" width="320"/>    | 
-| Usb Debug | <img src="/images/usb.gif" align="right" width="320"/>    | 
-|           |      | 
-
+  
 # License
 ```xml
 Designed and developed by 2024 Sebastian Cipolat
