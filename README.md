@@ -55,9 +55,25 @@ FraudShield.getInstance().init("COMPANY_ID", "API_KEY",
     }
 )
 ```
+* Identify User
 
-
+```kotlin
+FraudShield.getInstance().setUserID("USER_id")
 ```
+* Events
+
+Set custom events
+
+```kotlin
+FraudShield.getInstance().setUserID("USER_id")
+```
+
+```kotlin
+FraudShield.sendEvent("event_name", mapOf("key1" to "value1", "key2" to 123, "key3" to true))
+```
+
+
+
 # License
 ```xml
 Designed and developed by 2024 Sebastian Cipolat
