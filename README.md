@@ -140,7 +140,9 @@ Finish Session, clean user id and make a flush.
 ```kotlin
 FraudShield.getInstance().endSession()
 ```
+# CI /CD 
 
+![FraudShield drawio (2)](https://github.com/sebacipolat/FraudShield/assets/1523404/f80af033-d754-476b-8b74-146f9028ffb1)
 
 
 # License
