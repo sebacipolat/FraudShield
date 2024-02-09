@@ -19,7 +19,7 @@ Design Example of a Fictional Library for Fraud Prevention.
   
   
 ## Architecture
-<img src="/FraudShield.drawio.png"/>
+<img src="/new_FraudShield.jpg"/>
 
 The SDK has a singleton as an entrypoint.
 
